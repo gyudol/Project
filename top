@@ -1,0 +1,15 @@
+module top_replayBuffer(clk, reset_n, ack_nak, seq, tim_out, ready, we, din, dout);
+
+input clk, reset_n, tim_out, we;
+input[1:0] ack_nak;
+input[11:0] seq; 
+input[63:0] din;
+
+output ready;
+output[63:0] dout;
+
+FSM u1();
+FIFO u2();
+SRAM u3();
+
+endmodule
