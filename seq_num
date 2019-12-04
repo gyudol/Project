@@ -1,4 +1,4 @@
-module ack_nak (DLLP,clk,time_out);
+module seq_num(DLLP,clk,time_out,DLLP_out);
 input [47 :0] DLLP;
 input time_out;
 input clk;
