@@ -2,7 +2,7 @@ module ack_nak (DLLP,clk,time_out);
 input [47 :0] DLLP;
 input time_out;
 input clk;
-output ack_nak_signal;
+output [47 :0] DLLP_out;
 
  reg [11:0] next_seq;
 
@@ -17,5 +17,7 @@ always @(posedge clk) begin
       else 
           next_seq = next_seq +1;
     end
+    DLLP_out <= DLLP;
+    DLLP_out [20 : 31] <=next_seq;
   end 
 end module
